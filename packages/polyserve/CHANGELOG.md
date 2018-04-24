@@ -6,11 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
+* Stricter requirements for determining when a browser supports modules, and
+  hence when to automatically transform modules to AMD. We now require support
+  for dynamic import and import.meta.
 * Fixed issue where resources would be cached after restarting polyserve with
   different compilation/transformation options. We've turned off most
   browser-side caching. As a reminder: do not use polyserve in production,
   it is designed for development.
-<!-- Add new, unreleased items here. -->
 
 ## [0.27.6] (2018-04-18)
 * Fix node module resolution for the case where the root package is served from

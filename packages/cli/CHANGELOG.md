@@ -7,13 +7,14 @@
 * `build`:
   * Disable Babel `minify-constant-folding` plugin when minifying. This plugin has a bug that breaks when a constant is exported from a module (https://github.com/babel/minify/issues/820).
   * Added `--auto-base-path` flag. Sets the entrypoint `<base>` tag for all builds to match the name of that build. Unlike other flags, does not necessarily trigger a single one-off build.
-* `serve`:
+* `serve`, `test`:
+  * Stricter requirements for determining when a browser supports modules, and
+    hence when to automatically transform modules to AMD. We now require support
+    for dynamic import and import.meta.
   * Fixed issue where resources would be cached after restarting polyserve with
     different compilation/transformation options. We've turned off most
     browser-side caching. As a reminder: do not use `polymser serve` as a
     production webserver, it is designed for development.
-
-<!-- Add new, unreleased items here. -->
 
 ## v1.7.0-pre.13 [04-19-2018]
 * `init`
