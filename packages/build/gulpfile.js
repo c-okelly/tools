@@ -231,7 +231,7 @@ gulp.task('gen-babel-helpers-amd', () => {
 
 gulp.task('gen-requirejs', () => {
   const requireJsPath =
-      path.join(path.dirname(require.resolve('requirejs')), '..', 'require.js');
+      path.join(__dirname, '..', 'amd-loader', 'amd-loader.js');
   const requireJsCode = fs.readFileSync(requireJsPath, 'utf-8');
   minifyAndWriteJs(requireJsCode, 'requirejs.min.js');
 });
